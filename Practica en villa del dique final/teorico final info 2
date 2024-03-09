@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main(int argc, char *argv[]) {
+	int total[5]={1,2,3,4,5};
+	int i=0;
+	int *p=NULL;
+	
+	for(i=0;i<5;i++){
+		printf("%d-",total[i]);
+	}
+	p=total;
+	*(p)=*(p)+1;//{2,2,3,4,5}
+	*(p+1)=*(p)+1;//{2,3,3,4,5}
+	*(p+*(p+1)   )=*(p)+1;//{2,3,3,3,5}
+	*(p+ total[0] )=*(p);//{2,3,2,3,5}
+	
+	printf("\n\n");
+	for(i=0;i<5;i++){
+		printf("%d-",total[i]);
+	}
+	
+	return 0;
+}
+

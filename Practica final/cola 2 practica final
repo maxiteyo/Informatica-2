@@ -1,0 +1,63 @@
+#include <iostream>
+#include <ctime>
+#include <stdlib.h>
+
+using namespace std;
+
+struct node{
+	int numero;
+	struct node *link;
+};
+
+int main(int argc, char *argv[]) {
+	
+	struct node *front=NULL;
+	struct node *back=NULL;
+	struct node *temp=NULL;
+	srand(time(NULL));
+	int i=0,num=0;
+	
+	for(i=0;i<5;i++){
+		
+	printf("\nGeneracion de numero aleatorio %d",i+1);
+	num=1+rand()%(11-1);
+	
+	temp=(struct node *) malloc(sizeof(struct node));
+	
+	if(temp==NULL){
+		printf("\nNo hay memoria disponible");
+		exit (1);
+	}
+	
+	temp->numero=num;
+	temp->link=NULL;
+	
+	if(back==NULL){
+		back=temp;
+		front=back;
+	}
+	else{
+		back->link=temp;
+		back=temp;
+	}
+}
+	
+	temp=front;
+	printf("\nToda la cola:\n");
+	while(temp!=NULL){
+		printf("%d-",temp->numero);
+		temp=temp->link;
+	}
+	
+	temp=front;
+	printf("\nSolo valores pares:\n");
+	while(temp!=NULL){
+		if(temp->numero%2==0){
+			printf("%d-",temp->numero);
+		}
+		temp=temp->link;
+	}
+	return 0;
+}
+
+	

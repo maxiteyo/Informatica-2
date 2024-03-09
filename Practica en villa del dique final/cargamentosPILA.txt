@@ -1,0 +1,4 @@
+4	777	vegeta	777	603729
+3	99	juancito	99	9801
+2	10	sebastian	10	100
+1	5	pepe	5	25
